@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         String player1 = "";
-        String player2 = "";
-        String winner = "";
+        String player2;
+        String winner;
         int turnCounter = 1;
         boolean playing = true;
         String[] board = new String[] {"1","2","3","4","5","6","7","8","9"};
@@ -126,8 +126,8 @@ public class Main {
 
     // checks the board for a draw
     public static boolean checkForDraw(String[] board) {
-        for(int i = 0; i < board.length; i++) {
-            if (board[i].equals("X") || board[i].equals("O")) {
+        for (String s : board) {
+            if (!s.equals("X") && !s.equals("O")) {
                 return false;
             }
         }
