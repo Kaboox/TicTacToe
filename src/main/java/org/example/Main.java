@@ -5,6 +5,19 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        boolean playAgain;
+        do {
+            gameFlow();
+            System.out.println("Do you want to play again? Y or N");
+            Scanner scan = new Scanner(System.in);
+            String response = scan.nextLine().toUpperCase();
+            playAgain = response.equals("Y");
+        } while (playAgain);
+
+
+    }
+
+    public static void gameFlow(){
         String player1 = "";
         String player2;
         String winner;
@@ -34,7 +47,6 @@ public class Main {
                 playing = false;
             }
         }
-
     }
 
     // starts the game and asks for sign X or O
